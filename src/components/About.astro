@@ -31,7 +31,7 @@ import { siteConfig } from "../config";
               <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   class="h-full rounded-full lang-bar-fill"
-                  style={`--bar-width: ${lang.percent}%; width: ${lang.percent}%; background-color: var(--color-accent); opacity: ${lang.percent === 100 ? '1' : '0.7'};`}
+                  style={`--bar-width: ${lang.percent}%; width: ${lang.percent}%; background-color: var(--color-accent); opacity: ${lang.percent === 100 ? '1' : '0.7'}; animation-delay: ${(i + 1) * 200}ms;`}
                 ></div>
               </div>
             </div>
