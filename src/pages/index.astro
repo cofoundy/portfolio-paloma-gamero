@@ -1,0 +1,64 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import CampaignShowcase from "../components/CampaignShowcase.astro";
+import Experience from "../components/Experience.astro";
+import Toolkit from "../components/Toolkit.astro";
+import Education from "../components/Education.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+---
+
+<html lang="en" style={`--color-primary-dark:${siteConfig.colors.primaryDark};--color-primary:${siteConfig.colors.primary};--color-primary-light:${siteConfig.colors.primaryLight};--color-accent:${siteConfig.colors.accent};--color-surface:${siteConfig.colors.surface};--color-surface-light:${siteConfig.colors.surfaceLight}`}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{siteConfig.name} — {siteConfig.title}</title>
+  </head>
+  <body class="bg-white text-gray-800">
+    <Header />
+    <main>
+      <Hero />
+      <About />
+      <CampaignShowcase />
+      <Experience />
+      <Toolkit />
+      <Education />
+    </main>
+    <Footer />
+
+    <!-- Scroll Reveal -->
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      const revealOnScroll = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(revealOnScroll, observerOptions);
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

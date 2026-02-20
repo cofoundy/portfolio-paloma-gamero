@@ -1,0 +1,50 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="education" class="py-16 md:py-24 px-6 md:px-24 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+      <!-- Heading -->
+      <div class="lg:col-span-4 reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Education</h2>
+        <div class="accent-bar"></div>
+      </div>
+
+      <!-- Education cards -->
+      <div class="lg:col-span-8 reveal stagger-1">
+        {siteConfig.education.map(edu => (
+          <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm card-hover">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                   style="background-color: var(--color-accent); opacity: 0.1;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                     style="stroke: var(--color-accent);">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-gray-900">{edu.degree}</h3>
+                {edu.extra && (
+                  <p class="text-sm font-medium text-gray-700 mt-0.5">+ {edu.extra}</p>
+                )}
+                <p class="text-base font-medium mt-1" style="color: var(--color-accent);">{edu.school}</p>
+                <div class="flex flex-wrap items-center gap-3 mt-2 text-sm text-gray-500" style="font-family: 'IBM Plex Mono', monospace;">
+                  <span>{edu.dateRange}</span>
+                  <span class="text-gray-300">|</span>
+                  <span>{edu.location}</span>
+                  {edu.gpa && (
+                    <>
+                      <span class="text-gray-300">|</span>
+                      <span>GPA {edu.gpa}</span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

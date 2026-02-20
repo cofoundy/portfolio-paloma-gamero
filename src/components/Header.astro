@@ -1,0 +1,39 @@
+---
+import { siteConfig } from "../config";
+---
+
+<header id="main-header" class="hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-center gap-8">
+    {["About", "Work", "Experience", "Education"].map(item => (
+      <a
+        href={`#${item.toLowerCase()}`}
+        class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300"
+        style="font-family: 'IBM Plex Mono', monospace;"
+      >
+        {item}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (!header) return;
+
+    if (currentScroll > 100) {
+      header.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+      header.style.backdropFilter = 'blur(8px)';
+      header.style.borderBottom = '1px solid #e5e7eb';
+    } else {
+      header.style.backgroundColor = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.borderBottom = 'none';
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
