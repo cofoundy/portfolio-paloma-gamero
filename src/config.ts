@@ -35,32 +35,35 @@ export const siteConfig = {
     { name: "German", level: "Advanced", percent: 75 },
   ],
 
-  // Campaign showcase — placeholder structure for her visual work
-  // Replace images when Paloma provides her graphics/photos/videos
-  campaigns: [
+  // Campaign showcase organized by brand
+  brands: [
     {
-      title: "Ethnic Supermarket Campaigns",
-      client: "Fresco Marketing",
-      type: "Graphics & Social Media",
-      description: "Bilingual marketing campaigns for major Kansas City supermarkets. Custom graphics, social content, and promotional materials in English and Spanish.",
+      name: "El Torito",
+      type: "Ethnic Supermarket",
+      description: "Bilingual marketing campaigns for El Torito Fresh Produce & Meat Market in Kansas City. Custom graphics, social media content, and seasonal promotional materials in English and Spanish.",
+      images: [
+        { src: "/work/el-torito-superbowl.jpg", alt: "Super Bowl snack promotion for El Torito" },
+        { src: "/work/el-torito-beer.jpg", alt: "Dos Equis beer product photography for El Torito" },
+        { src: "/work/el-torito-valentines.jpg", alt: "Valentine's Day campaign graphic for El Torito" },
+      ],
     },
     {
-      title: "HBSA Event Marketing",
-      client: "Hispanic Business Student Association",
-      type: "Event Promotion",
-      description: "Comprehensive marketing campaigns including flyers, posters, and digital graphics for student business association events at KU.",
+      name: "El Mercado Fresco",
+      type: "Ethnic Supermarket",
+      description: "Visual content and social media campaigns for El Mercado Fresco. Product photography, promotional graphics, and bilingual marketing materials showcasing fresh produce and store offerings.",
+      images: [
+        { src: "/work/el-mercado-fresco-frutas.jpg", alt: "Fresh fruits promotion for El Mercado Fresco" },
+        { src: "/work/el-mercado-fresco-snacks.jpg", alt: "Mexican snacks product display for El Mercado Fresco" },
+      ],
     },
     {
-      title: "Peruvian Association Branding",
-      client: "KU Peruvian Student Association",
-      type: "Social Media & Design",
-      description: "Social media management, content creation, and visual design to promote cultural events and boost online engagement.",
-    },
-    {
-      title: "Fashion Department Content",
-      client: "Johnson County Community College",
-      type: "Photo & Video",
-      description: "Engaging visual content including graphics, photos, and videos highlighting the fashion department's activities and initiatives.",
+      name: "World Fresh Market",
+      type: "Grocery & Fresh Foods",
+      description: "Marketing content for World Fresh Market in Overland Park, KS. Product photography and promotional graphics highlighting fresh produce and meat departments.",
+      images: [
+        { src: "/work/world-fresh-vegetables.jpg", alt: "Fresh vegetables display for World Fresh Market" },
+        { src: "/work/world-fresh-meat.jpg", alt: "Fresh meat selection for World Fresh Market" },
+      ],
     },
   ],
 
