@@ -38,9 +38,9 @@ export const siteConfig = {
   // Campaign showcase organized by brand
   brands: [
     {
-      name: "El Torito",
+      name: "El Torito I & III",
       type: "Ethnic Supermarket",
-      description: "Bilingual marketing campaigns for El Torito Fresh Produce & Meat Market in Kansas City. Custom graphics, social media content, and seasonal promotional materials in English and Spanish.",
+      description: "El Torito I & III are community-based supermarkets serving multicultural neighborhoods. As Account Manager, I create and manage social media content for both locations, including posts, stories, reels, community interaction, and campaign execution. My work has generated over 9,000 organic views on Reels and more than 700 comments on high-performing posts, while supporting in-store sales.",
       images: [
         { src: "/work/el-torito-superbowl.jpg", alt: "Super Bowl snack promotion for El Torito" },
         { src: "/work/el-torito-beer.jpg", alt: "Dos Equis beer product photography for El Torito" },
@@ -48,9 +48,19 @@ export const siteConfig = {
       ],
     },
     {
+      name: "Sido's Cuisine",
+      type: "Local Restaurant",
+      description: "Sido's Cuisine is a locally owned restaurant in Kansas City. As Account Manager, I managed social media content including posts, stories, reels, community interaction, and campaign execution. I also developed the brand board, defining brand elements such as colors and fonts to establish visual consistency across social content and marketing materials. During this time, the brand expanded to three locations, strengthening its local presence.",
+      images: [
+        { src: "/work/sidos-shawarma.jpg", alt: "Shawarma food photography for Sido's Cuisine" },
+        { src: "/work/sidos-chicken.jpg", alt: "Charcoal grilled chicken for Sido's Cuisine" },
+        { src: "/work/sidos-brand-board.jpg", alt: "Brand board design for Sido's Cuisine" },
+      ],
+    },
+    {
       name: "El Mercado Fresco",
-      type: "Ethnic Supermarket",
-      description: "Visual content and social media campaigns for El Mercado Fresco. Product photography, promotional graphics, and bilingual marketing materials showcasing fresh produce and store offerings.",
+      type: "Fresh Market",
+      description: "El Mercado Fresco is a community-based supermarket serving multicultural neighborhoods. As Account Manager, I lead social media strategy and execution, managing posts, stories, reels, community engagement, and campaign rollouts. My work has driven strong organic performance, supported in-store promotions, and helped increase visibility and engagement for the brand across platforms.",
       images: [
         { src: "/work/el-mercado-fresco-frutas.jpg", alt: "Fresh fruits promotion for El Mercado Fresco" },
         { src: "/work/el-mercado-fresco-snacks.jpg", alt: "Mexican snacks product display for El Mercado Fresco" },
@@ -59,12 +69,20 @@ export const siteConfig = {
     {
       name: "World Fresh Market",
       type: "Grocery & Fresh Foods",
-      description: "Marketing content for World Fresh Market in Overland Park, KS. Product photography and promotional graphics highlighting fresh produce and meat departments.",
+      description: "World Fresh Market is a community-based supermarket known for offering a wide variety of international and culturally diverse products. As Account Manager, I manage social media content for the brand, including posts, stories, reels, community interaction, and campaign execution. My work has generated more than 10,000 organic views on Reels while supporting in-store promotions and increasing local engagement.",
       images: [
-        { src: "/work/world-fresh-vegetables.jpg", alt: "Fresh vegetables display for World Fresh Market" },
         { src: "/work/world-fresh-meat.jpg", alt: "Fresh meat selection for World Fresh Market" },
+        { src: "/work/world-fresh-vegetables.jpg", alt: "Fresh vegetables display for World Fresh Market" },
+        { src: "/work/world-fresh-fruits.jpg", alt: "Fresh fruits selection for World Fresh Market" },
       ],
     },
+  ],
+
+  // YouTube video reels
+  videos: [
+    { url: "https://www.youtube.com/shorts/6vuWCA-6AcI", title: "Campaign Reel 1" },
+    { url: "https://www.youtube.com/shorts/5YbC9hTc2DQ", title: "Campaign Reel 2" },
+    { url: "https://www.youtube.com/shorts/PnoKZIjHiZY", title: "Campaign Reel 3" },
   ],
 
   experience: [
