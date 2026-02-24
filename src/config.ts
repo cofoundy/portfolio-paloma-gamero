@@ -24,10 +24,9 @@ export const siteConfig = {
   social: {
     email: "palomaapgk@yahoo.com",
     linkedin: "https://www.linkedin.com/in/paloma-gamero/",
-    instagram: "https://instagram.com/palogamero",
   },
 
-  aboutMe: "Bilingual marketing professional of Peruvian-Japanese heritage, bridging brands with Hispanic communities across the United States. Currently managing 10 business accounts at Fresco Marketing while completing a B.S. in Marketing at the University of Kansas. I create custom graphics, direct photoshoots, produce commercial videos, and develop bilingual campaigns that drive real engagement and sales.",
+  aboutMe: "Hey there! I'm a bilingual marketing professional with 2 years of experience as a Digital Marketing Associate, working with brands to reach diverse audiences across the United States. I manage business accounts at Fresco Marketing while completing my B.S. in Marketing and Professional Selling at the University of Kansas (Class of 2026). My work includes custom graphics, photo shoots, commercial video production, brand management, and bilingual campaign strategy.",
 
   languages: [
     { name: "English", level: "Native", percent: 100 },
@@ -99,6 +98,16 @@ export const siteConfig = {
       ],
     },
     {
+      company: "The University Daily Kansan",
+      title: "Sales Team",
+      dateRange: "Sep 2025 — Present",
+      location: "Lawrence, KS",
+      bullets: [
+        "Collaborate with the sales team to identify and reach out to potential clients for advertising opportunities",
+        "Gain hands-on experience in client communication, relationship building, and marketing strategy",
+      ],
+    },
+    {
       company: "Hispanic Business Student Association",
       title: "Marketing Director",
       dateRange: "Aug 2023 — Present",
@@ -118,16 +127,6 @@ export const siteConfig = {
         "Execute campaigns raising awareness of association events and initiatives",
         "Manage social media platforms, creating and scheduling content",
         "Design eye-catching graphics and visuals to increase engagement",
-      ],
-    },
-    {
-      company: "JCCC Fashion Department",
-      title: "Social Media Developer",
-      dateRange: "Aug 2021 — Jan 2022",
-      location: "Overland Park, KS",
-      bullets: [
-        "Developed engaging content: graphics, photos, and videos",
-        "Contributed innovative ideas to grow social media audience",
       ],
     },
   ],
@@ -158,7 +157,7 @@ export const siteConfig = {
       extra: "Certificate in Professional Selling",
       dateRange: "Graduating May 2026",
       location: "Lawrence, Kansas",
-      gpa: "3.5",
+      gpa: "3.3",
     },
   ],
 };

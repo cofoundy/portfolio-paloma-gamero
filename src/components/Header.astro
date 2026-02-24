@@ -13,13 +13,25 @@ const firstName = siteConfig.name.split(' ')[0];
     <!-- Links (right) — desktop -->
     <div class="hidden md:flex items-center gap-8">
       {["About", "Work", "Experience", "Contact"].map(item => (
-        <a
-          href={`#${item.toLowerCase()}`}
-          class="text-xs uppercase tracking-[0.15em] transition-opacity hover:opacity-60"
-          style="color: var(--color-text);"
-        >
-          {item}
-        </a>
+        item === "Work" ? (
+          <a
+            href="/resume-paloma-gamero.pdf"
+            target="_blank"
+            rel="noopener"
+            class="text-xs uppercase tracking-[0.15em] transition-opacity hover:opacity-60"
+            style="color: var(--color-text);"
+          >
+            Resumen
+          </a>
+        ) : (
+          <a
+            href={`#${item.toLowerCase()}`}
+            class="text-xs uppercase tracking-[0.15em] transition-opacity hover:opacity-60"
+            style="color: var(--color-text);"
+          >
+            {item}
+          </a>
+        )
       ))}
     </div>
 
@@ -33,13 +45,25 @@ const firstName = siteConfig.name.split(' ')[0];
   <div id="mobile-menu" class="hidden md:hidden px-6 pb-6">
     <div class="flex flex-col gap-4">
       {["About", "Work", "Experience", "Contact"].map(item => (
-        <a
-          href={`#${item.toLowerCase()}`}
-          class="mobile-nav-link text-sm uppercase tracking-[0.15em] py-2"
-          style="color: var(--color-text);"
-        >
-          {item}
-        </a>
+        item === "Work" ? (
+          <a
+            href="/resume-paloma-gamero.pdf"
+            target="_blank"
+            rel="noopener"
+            class="mobile-nav-link text-sm uppercase tracking-[0.15em] py-2"
+            style="color: var(--color-text);"
+          >
+            Resumen
+          </a>
+        ) : (
+          <a
+            href={`#${item.toLowerCase()}`}
+            class="mobile-nav-link text-sm uppercase tracking-[0.15em] py-2"
+            style="color: var(--color-text);"
+          >
+            {item}
+          </a>
+        )
       ))}
     </div>
   </div>
