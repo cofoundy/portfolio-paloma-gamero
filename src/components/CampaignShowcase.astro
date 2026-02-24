@@ -1,15 +1,6 @@
 ---
 import { siteConfig } from "../config";
 
-// Brand accent colors for visual variety
-const brandColors: Record<string, { bg: string; text: string; accent: string }> = {
-  "El Torito I & III": { bg: "#fef2f2", text: "#991b1b", accent: "#ef4444" },
-  "Sido's Cuisine": { bg: "#fef9ee", text: "#92400e", accent: "#f59e0b" },
-  "El Mercado Fresco": { bg: "#fef2f2", text: "#9f1239", accent: "#e11d48" },
-  "World Fresh Market": { bg: "#f0fdf4", text: "#166534", accent: "#22c55e" },
-};
-
-// Convert YouTube Shorts URL to embed URL
 function getEmbedUrl(url: string): string {
   const match = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
   if (match) return `https://www.youtube.com/embed/${match[1]}`;
@@ -17,92 +8,76 @@ function getEmbedUrl(url: string): string {
 }
 ---
 
-<section id="work" class="py-16 md:py-24 px-6 md:px-24" style="background-color: var(--color-surface);">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-      <!-- Heading -->
-      <div class="lg:col-span-4 reveal">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">My Work</h2>
-        <div class="accent-bar"></div>
-        <p class="mt-4 text-gray-500 text-base">
-          Visual campaigns that connect cultures and drive engagement.
-        </p>
-      </div>
-
-      <!-- Brand Cards -->
-      <div class="lg:col-span-8 space-y-6">
-        {siteConfig.brands.map((brand, i) => {
-          const colors = brandColors[brand.name] || { bg: "#f0fdfa", text: "#134e4a", accent: "#0d9488" };
-          return (
-            <div class={`reveal stagger-${i + 1} campaign-card group rounded-xl border border-gray-200 bg-white overflow-hidden card-hover`}>
-              {/* Image gallery area */}
-              <div class="relative overflow-hidden" style={`background-color: ${colors.bg};`}>
-                <div class={`grid ${brand.images.length >= 3 ? 'grid-cols-3' : brand.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-0.5`}>
-                  {brand.images.map((image) => (
-                    <div class="aspect-[4/3] overflow-hidden">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Type badge */}
-                <span
-                  class="absolute top-4 left-4 text-xs font-medium px-3 py-1 rounded-full"
-                  style={`background-color: ${colors.bg}; color: ${colors.text}; font-family: 'IBM Plex Mono', monospace;`}
-                >
-                  {brand.type}
-                </span>
-              </div>
-
-              {/* Card content */}
-              <div class="p-6">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">{brand.name}</h3>
-                    <p class="text-sm font-medium mb-3" style="color: var(--color-accent); font-family: 'IBM Plex Mono', monospace;">
-                      Account Manager
-                    </p>
-                  </div>
-                  <span class="flex-shrink-0 text-sm text-gray-400" style="font-family: 'IBM Plex Mono', monospace;">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <p class="text-sm md:text-base text-gray-600 leading-relaxed">{brand.description}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+<section id="work" class="section-dark py-20 md:py-32 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section title -->
+    <div class="mb-16 md:mb-20 reveal">
+      <p class="label-upper mb-4" style="color: #888;">Selected Work</p>
+      <h2 class="display-large">PAST PROJECTS</h2>
     </div>
 
-    {/* Video Reels Section */}
-    {siteConfig.videos && siteConfig.videos.length > 0 && (
-      <div class="mt-20 reveal">
-        <div class="mb-10">
-          <p class="text-xs uppercase tracking-[0.25em] mb-3 font-medium" style="color: var(--color-accent); font-family: 'IBM Plex Mono', monospace;">
-            Video Content
+    <!-- Brand sections -->
+    <div class="space-y-20 md:space-y-28">
+      {siteConfig.brands.map((brand, i) => (
+        <div class="reveal stagger-1">
+          <!-- Brand header -->
+          <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-6 md:mb-8">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold" style="font-family: var(--font-display); color: #f3eeed;">
+                {brand.name}
+              </h3>
+              <span class="text-xs uppercase tracking-[0.2em] mt-1 inline-block" style="color: #888;">
+                {brand.type}
+              </span>
+            </div>
+            <span class="text-sm" style="color: #666; font-family: var(--font-body);">
+              {String(i + 1).padStart(2, '0')} / {String(siteConfig.brands.length).padStart(2, '0')}
+            </span>
+          </div>
+
+          <!-- Description -->
+          <p class="text-base md:text-lg leading-relaxed mb-8 max-w-3xl" style="color: #aaa;">
+            {brand.description}
           </p>
-          <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Reels & Campaigns</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {siteConfig.videos.map((video, i) => (
-            <div class={`reveal stagger-${i + 1} rounded-xl overflow-hidden border border-gray-200 bg-white card-hover`}>
-              <div class="aspect-[9/16]">
-                <iframe
-                  src={getEmbedUrl(video.url)}
-                  title={video.title}
-                  class="w-full h-full"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+
+          <!-- Image grid -->
+          <div class={`grid gap-3 ${brand.images.length >= 3 ? 'grid-cols-2 md:grid-cols-3' : brand.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            {brand.images.map((image) => (
+              <div class="img-hover aspect-[4/3] overflow-hidden rounded-sm">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  class="w-full h-full object-cover"
                   loading="lazy"
-                ></iframe>
+                />
               </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Video Reels -->
+    {siteConfig.videos && siteConfig.videos.length > 0 && (
+      <div class="mt-24 md:mt-32 reveal">
+        <div class="mb-10">
+          <p class="label-upper mb-4" style="color: #888;">Video Content</p>
+          <h3 class="text-2xl md:text-3xl font-bold" style="font-family: var(--font-display); color: #f3eeed;">
+            Reels & Campaigns
+          </h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {siteConfig.videos.map((video) => (
+            <div class="aspect-[9/16] rounded-sm overflow-hidden">
+              <iframe
+                src={getEmbedUrl(video.url)}
+                title={video.title}
+                class="w-full h-full"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
             </div>
           ))}
         </div>

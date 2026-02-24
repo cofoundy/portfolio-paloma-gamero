@@ -1,0 +1,20 @@
+---
+const text = "MEET PALOMA";
+const separator = "\u00A0\u00A0\u00B7\u00A0\u00A0";
+const repeat = 10;
+---
+
+<div class="overflow-hidden py-6 md:py-8 border-y" style="border-color: rgba(26,26,26,0.1);">
+  <div class="marquee-track">
+    {Array.from({ length: repeat }).map(() => (
+      <span class="whitespace-nowrap text-lg md:text-xl tracking-[0.3em] uppercase font-medium" style="color: var(--color-text-light); font-family: var(--font-body);">
+        {text}{separator}
+      </span>
+    ))}
+    {Array.from({ length: repeat }).map(() => (
+      <span class="whitespace-nowrap text-lg md:text-xl tracking-[0.3em] uppercase font-medium" style="color: var(--color-text-light); font-family: var(--font-body);">
+        {text}{separator}
+      </span>
+    ))}
+  </div>
+</div>
