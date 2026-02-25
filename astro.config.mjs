@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://paloma-gamero.cofoundy.dev",
+  site: "https://palomagamero.com",
   vite: {
     plugins: [tailwindcss()],
   },
